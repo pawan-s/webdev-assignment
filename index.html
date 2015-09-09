@@ -1,1 +1,144 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta chatset="UTF-8"/>
+<title>Chill Chill</title>
+<link rel="stylesheet" type="text/css" href="nomalize.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="validation.js"></script>
+</head>
+<body>
+<div class="main-wrapper">
+	<nav>
+		<div class="main-logo">
+		<a href="#"><img src="img/Logo.png"></a></img>
+		</div>
+		<ul>
+			<li><a href="#">MENU</a></li>
+			<li><a href="#">ABOUT</a></li>
+			<li><a href="#">GALLERY</a></li>
+			<li><a href="#">NEWS</a></li>
+			<li><a href="#">RESERVATIONS</a></li>
+			<li><a href="#">CONTACT</a></li>
+		</ul>
+	</nav>
+
+	<div class="banner">
+		<img class="img" src="img/banner.jpg">
+		<div class="nowOpen">
+			<h1>Now Open!</h1>
+			<h3>Mon-Sat 09:00 AM - 09:00 PM</h3>
+			<h3>Chelten Ave Station, Philadelphia</h3>
+		</div>
+	</div>
+	<div class="menu-recommend group header">
+		<h1 class="divider">Highly Recommended</h1>
+		<div class="menu1 col">
+			<img src="img/menu1.jpg">
+			<h3>Salmon Creamcheese</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.</p>
+		</div>
+		<div class="menu2 col">
+			<img src="img/menu2.jpg">
+			<h3>Grilled Pork</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.</p>
+		</div>
+		<div class="menu3 col">
+			<img src="img/menu3.jpg">
+			<h3>Coffee</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.</p>
+		</div>
+		<div class="menu4 col">
+			<img src="img/menu4.jpg">
+			<h3>Cheese cake</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id.</p>
+		</div>
+	</div>
+
+	<div class="newsAndEvent group header">
+		<h1 class="divider"> News and Event</h1>
+		<div class="row">
+			<img src="img/news1.jpg">
+			<h3>Grand opening</h3>
+		</div>
+		<div class="row">
+			<img src="img/news2.jpg">
+			<h3>Pizza Night</h3>
+		</div>
+		<div class="row">
+			<img src="img/news3.jpg">
+			<h3>Ramen Festival</h3>
+		</div>
+	</div>
+
+	<div class="reviews group header">
+		<h1 class="divider">Reviews</h1>
+		<div class="row">
+			<img src="img/reviewer1.jpg">
+			<h3>Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus.</h3>
+			<p>Jason Digs</p>
+		</div>
+		<div class="row">
+			<img src="img/reviewer2.jpg">
+			<h3>Dui tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. </h3>
+			<p>Susan Plammer</p>
+		</div>
+		<div class="row">
+			<img src="img/reviewer3.jpg">
+			<h3>Duis vulputate commodo lectus.</h3>
+			<p>Jack Overcode</p>
+		</div>
+	</div>
+	<div class="contact group header">
+		<h1 class="divider">Contact</h1>
+		<div id="googleMap"></div>
+		<form class="inputForm" name='sendMsg' onsubmit="return validateForm()" method="post">
+		    <div>
+		       	<label for="name">Name:</label>
+		   		<input type="text" id="inputName"/>
+	 		</div>
+	 		<div>
+		        <label for="email">E-mail:</label>
+		        <input type="email" id="email"/>
+		    </div>
+		    <div>
+		        <label for="msg">Message:</label>
+		        <textarea id="msg"></textarea>
+		    </div>
+			<input type="submit" name="submit" value="Submit" class="btn"/>
+		</form>		
+	
+	</div>
+	
+	<br>
+	<div class="footer">
+
+	</div>
+</div>
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter=new google.maps.LatLng(40.029596,-75.180938);
+var marker;
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:17,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  animation:google.maps.Animation.BOUNCE
+  });
+
+marker.setMap(map);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</body>
